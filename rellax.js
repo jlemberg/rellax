@@ -110,7 +110,7 @@
       }
 
       window.addEventListener('resize', function(){
-        animate();
+        pause === false && animate();
       });
 
       // Start the loop
@@ -242,7 +242,10 @@
 
 
     self.destroy = function() {
+      console.log('resetting');
+
       for (var i = 0; i < self.elems.length; i++){
+        console.log(blocks[i]);
         self.elems[i].style.cssText = blocks[i].style;
       }
       pause = true;
